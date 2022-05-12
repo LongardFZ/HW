@@ -24,7 +24,7 @@ class MainRecommender:
         # your_code. Это не обязательная часть. Но если вам удобно что-либо посчитать тут - можно это сделать
         
         self.user_item_matrix = self.prepare_matrix(data)  # pd.DataFrame
-        self.id_to_itemid, self.id_to_userid, self.itemid_to_id, self.userid_to_id = prepare_dicts(self.user_item_matrix)
+        self.id_to_itemid, self.id_to_userid, self.itemid_to_id, self.userid_to_id = self.prepare_dicts(self.user_item_matrix)
         
         if weighting:
             self.user_item_matrix = bm25_weight(self.user_item_matrix.T).T 
